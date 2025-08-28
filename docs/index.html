@@ -3,76 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margarita French Lessons</title>
+    <title>Margarita French - Профессиональные уроки французского</title>
     <style>
+        /* Основные стили */
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --gold: #d4af37;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            background-attachment: fixed;
+            color: var(--light);
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         
+        /* Шапка */
         header {
             text-align: center;
-            padding: 50px 0;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin: 0 0 20px 0;
+            color: var(--gold);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
             margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Кнопки */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 10px;
-            background: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            padding: 15px 35px;
             border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 500;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--gold);
         }
         
         .btn:hover {
-            background: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
-        .lesson-card {
+        /* Карточки услуг */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .service-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            color: var(--gold);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Футер */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 250px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🇫🇷 Уроки Французского</h1>
-            <p>С Маргаритой</p>
+            <div class="logo">🇫🇷</div>
+            <h1>French that fits your goals</h1>
+            <p class="subtitle">exams, conversation, or confidence</p>
+            
+            <div class="btn-container">
+                <a href="lessons.html" class="btn btn-primary">Начать обучение</a>
+                <a href="contacts.html" class="btn btn-secondary">Консультация</a>
+            </div>
         </header>
-        
-        <div style="text-align: center;">
-            <a href="lessons.html" class="btn">📚 Мои Уроки</a>
-            <a href="contacts.html" class="btn">📞 Контакты</a>
+
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">Подготовка к экзаменам</h3>
+                <p>TCF/TEF/DELF - профессиональная подготовка с гарантией результата</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3 class="service-title">Разговорная практика</h3>
+                <p>Живое общение и преодоление языкового барьера</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3 class="service-title">Уверенность в себе</h3>
+                <p>Персональный подход для достижения ваших целей</p>
+            </div>
         </div>
-        
-        <div class="lesson-card">
-            <h2>Добро пожаловать!</h2>
-            <p>Профессиональные уроки французского языка для всех уровней</p>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <h2 style="color: var(--gold); margin-bottom: 20px;">You're not alone</h2>
+            <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">
+                We're here to guide you. Prepare for the TCF/TEF or take your French 
+                to the next level with personalized guidance.
+            </p>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>Margarita French Lessons © 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
