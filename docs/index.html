@@ -5,94 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Margarita French - Профессиональные уроки французского</title>
     <style>
-        /* Основные стили */
+        /* Обновленные стили в стиле contacts.html */
         :root {
             --primary: #2c3e50;
-            --accent: #e74c3c;
-            --gold: #d4af37;
-            --light: #ecf0f1;
+            --accent: #3498db;
+            --light: #ffffff;
             --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
         }
         
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: var(--light);
+            background: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
-        /* Шапка */
-        header {
-            text-align: center;
-            padding: 60px 0;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-bottom: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* Навигация */
+        .nav {
+            background: var(--primary);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
-            font-size: 3em;
-            margin-bottom: 20px;
+            color: var(--light);
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
         }
         
-        h1 {
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Шапка */
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--light-gray);
+            border-radius: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
             font-size: 2.5em;
-            font-weight: 300;
+            color: var(--primary);
             margin: 0 0 20px 0;
-            color: var(--gold);
+            font-weight: 300;
         }
         
         .subtitle {
-            font-size: 1.3em;
-            font-weight: 300;
+            font-size: 1.2em;
+            color: var(--gray);
             margin-bottom: 30px;
-            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* Кнопки */
-        .btn-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
+        /* Основная кнопка */
+        .main-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 8px;
             font-size: 1.1em;
             font-weight: 500;
-            cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
         
-        .btn-primary {
-            background: var(--gold);
-            color: var(--dark);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid var(--gold);
-        }
-        
-        .btn:hover {
+        .main-btn:hover {
+            background: #2980b9;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
         
         /* Карточки услуг */
@@ -104,23 +123,52 @@
         }
         
         .service-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--light);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
         }
         
         .service-icon {
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: var(--accent);
         }
         
         .service-title {
-            color: var(--gold);
-            font-size: 1.5em;
+            color: var(--primary);
+            font-size: 1.4em;
             margin-bottom: 15px;
+        }
+        
+        .service-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Цитата */
+        .quote {
+            text-align: center;
+            padding: 50px;
+            background: var(--light-gray);
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .quote-text {
+            font-size: 1.3em;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         /* Футер */
@@ -128,69 +176,81 @@
             text-align: center;
             margin-top: 80px;
             padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid var(--light-gray);
+            color: var(--gray);
         }
         
         /* Адаптивность */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            h1 {
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
                 font-size: 2em;
             }
             
-            .btn-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 250px;
-                text-align: center;
+            .services {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🇫🇷 Margarita French</a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="lessons.html">Уроки</a>
+                <a href="about.html">О преподавателе</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <div class="logo">🇫🇷</div>
+        <div class="header">
             <h1>French that fits your goals</h1>
             <p class="subtitle">exams, conversation, or confidence</p>
-            
-            <div class="btn-container">
-                <a href="lessons.html" class="btn btn-primary">Начать обучение</a>
-                <a href="contacts.html" class="btn btn-secondary">Консультация</a>
-            </div>
-        </header>
+            <a href="contacts.html" class="main-btn">📞 Начать обучение</a>
+        </div>
 
         <div class="services">
             <div class="service-card">
                 <div class="service-icon">🎓</div>
                 <h3 class="service-title">Подготовка к экзаменам</h3>
-                <p>TCF/TEF/DELF - профессиональная подготовка с гарантией результата</p>
+                <p class="service-text">TCF/TEF/DELF - профессиональная подготовка с гарантией результата</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">💬</div>
                 <h3 class="service-title">Разговорная практика</h3>
-                <p>Живое общение и преодоление языкового барьера</p>
+                <p class="service-text">Живое общение и преодоление языкового барьера</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">⭐</div>
                 <h3 class="service-title">Уверенность в себе</h3>
-                <p>Персональный подход для достижения ваших целей</p>
+                <p class="service-text">Персональный подход для достижения ваших целей</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 50px 0;">
-            <h2 style="color: var(--gold); margin-bottom: 20px;">You're not alone</h2>
-            <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">
-                We're here to guide you. Prepare for the TCF/TEF or take your French 
-                to the next level with personalized guidance.
+        <div class="quote">
+            <p class="quote-text">
+                "You're not alone. We're here to guide you. Prepare for the TCF/TEF or take your French 
+                to the next level with personalized guidance."
             </p>
         </div>
     </div>
