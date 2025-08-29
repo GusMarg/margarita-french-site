@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О преподавателе - Margarita French</title>
+    <style>
+        /* Те же стили что и в index.html */
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #ffffff;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Навигация */
+        .nav {
+            background: var(--primary);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--light);
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Заголовок страницы */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5em;
+            color: var(--primary);
+            margin: 0 0 20px 0;
+        }
+        
+        .page-description {
+            font-size: 1.2em;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Основной контент */
+        .teacher-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+            margin: 40px 0;
+        }
+        
+        .teacher-photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        .teacher-info {
+            padding: 20px;
+        }
+        
+        .teacher-name {
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .teacher-bio {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .teacher-details {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .detail-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: var(--accent);
+            width: 30px;
+            text-align: center;
+        }
+        
+        .detail-text {
+            color: var(--dark);
+        }
+        
+        /* Квалификации */
+        .qualifications {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .qualifications h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .qualification-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .qualification-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Кнопка */
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--accent);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .contact-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .teacher-profile {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .teacher-photo {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .qualification-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🇫🇷 Margarita French</a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="lessons.html">Уроки</a>
+                <a href="about.html">О преподавателе</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>👩‍🏫 О преподавателе</h1>
+            <p class="page-description">Профессиональный подход к изучению французского языка</p>
+        </div>
+
+        <div class="teacher-profile">
+            <div>
+                <img src="assets/images/margarita.jpg" alt="Маргарита - преподаватель французского" class="teacher-photo">
+            </div>
+            <div class="teacher-info">
+                <h2 class="teacher-name">Маргарита</h2>
+                <p class="teacher-bio">
+                    Опытный преподаватель французского языка с более чем 10-летним стажем. 
+                    Специализируюсь на подготовке к международным экзаменам TCF/TEF/DELF, 
+                    а также на развитии разговорных навыков и преодолении языкового барьера.
+                </p>
+                
+                <div class="teacher-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">🎓</div>
+                        <div class="detail-text">Диплом преподавателя французского языка</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🌍</div>
+                        <div class="detail-text">Опыт жизни и работы во Франции</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">⭐</div>
+                        <div class="detail-text">Сертификат TEF/TCF</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">👥</div>
+                        <div class="detail-text">Более 200 успешных студентов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="qualifications">
+            <h2>Квалификация и образование</h2>
+            <div class="qualification-list">
+                <div class="qualification-item">
+                    <h3>🎓 Образование</h3>
+                    <p>Высшее педагогическое образование по специальности "Французский язык"</p>
+                </div>
+                <div class="qualification-item">
+                    <h3>📜 Сертификаты</h3>
+                    <p>TCF C2, DELF B2, Сертификат преподавателя FLE</p>
+                </div>
+                <div class="qualification-item">
+                    <h3>💼 Опыт</h3>
+                    <p>10+ лет преподавания, работа во Франции, подготовка к экзаменам</p>
+                </div>
+                <div class="qualification-item">
+                    <h3>🌍 Языки</h3>
+                    <p>Французский (носитель), Русский, Английский</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="contacts.html" class="contact-btn">📞 Связаться с преподавателем</a>
+        </div>
+    </div>
+</body>
+</html>
