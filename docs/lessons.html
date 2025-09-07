@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Уроки - Margarita French</title>
     <style>
         :root {
@@ -72,10 +72,12 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        /* Кнопки уровней - на одном уровне */
         .lessons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 20px;
             margin: 40px 0;
         }
         .lesson-card {
@@ -85,6 +87,10 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             border: 1px solid var(--light-gray);
             transition: transform 0.3s ease;
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .lesson-card:hover {
             transform: translateY(-5px);
@@ -103,10 +109,12 @@
             color: var(--gray);
             margin-bottom: 20px;
             line-height: 1.6;
+            flex-grow: 1;
         }
         .download-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             padding: 12px 25px;
             background: var(--accent);
@@ -115,12 +123,27 @@
             border-radius: 8px;
             font-weight: 500;
             transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
         }
         .download-btn:hover {
             background: #2980b9;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
+        /* Страноведение Франции - вертикальный блок */
+        .lesson-card.civilisation {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex: none;
+            width: 250px;
+        }
+        .lesson-card.civilisation a.download-btn {
+            width: 100%;
+        }
+        /* Блок полезных ссылок */
         .contact-card {
             background: #f8f9fa;
             padding: 30px;
@@ -164,6 +187,21 @@
         .contact-link:hover {
             color: #2980b9;
         }
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .lessons-grid {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 25px;
+            }
+            .lesson-card {
+                flex: 1 1 300px;
+            }
+            .lesson-card.civilisation {
+                width: 100%;
+                flex: 1 1 300px;
+            }
+        }
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -176,9 +214,6 @@
             }
             .lesson-card {
                 padding: 20px;
-            }
-            .lessons-grid {
-                grid-template-columns: 1fr;
             }
             .contact-card {
                 padding: 20px;
@@ -223,7 +258,7 @@
             </div>
 
             <div class="lesson-card">
-                <div class="lesson-icon">💬</div>
+                <div class="lesson-icon">📘</div>
                 <h3 class="lesson-title">Средний уровень (A2)</h3>
                 <p class="lesson-description">Диалоги, ситуации общения и полезные фразы для уровня A2.</p>
                 <a href="assets/files/Тематический_план_А2_ВШЭ....pptx" class="download-btn" target="_blank">
@@ -240,12 +275,12 @@
                 </a>
             </div>
 
-            <div class="lesson-card">
+            <div class="lesson-card civilisation">
                 <div class="lesson-icon">🗺️</div>
                 <h3 class="lesson-title">Страноведение Франции</h3>
                 <p class="lesson-description">Материалы о культуре и обществе Франции для всех уровней.</p>
                 <a href="assets/files/Civilisation_1partie.pptx" class="download-btn" target="_blank">📥 Часть 1</a>
-                <a href="assets/files/Civilisation_2partie.pptx" class="download-btn" style="margin-left:10px;" target="_blank">📥 Часть 2</a>
+                <a href="assets/files/Civilisation_2partie.pptx" class="download-btn" target="_blank">📥 Часть 2</a>
             </div>
         </div>
 
